@@ -12,7 +12,7 @@
 <img src="img/logo.png" width="150px">
 
 <!-- Substitua o seguinte parágrafo por um resumo do seu projeto: -->
-O Projeto consiste em um site de gestão acadêmica. Ao fazer login, serão exibidas as disciplinas registradas juntamente com o nome do professor responsável. Ao clicar em "Acessar Disciplina", os alunos matriculados nela serão exibidos.
+O Projeto consiste em um site de gestão acadêmica. Ao fazer login, serão exibidas as disciplinas registradas juntamente com o nome do professor responsável. Ao clicar em "Acessar Disciplina", os alunos matriculados nela serão exibidos. Apenas usuários cadastrados como professores têm permissão para adicionar disciplinas novas e atribuir alunos a elas.
 ## Documentação
 
 * [Documentação (para desenvolvedores)](DOCUMENTACAO.md)
