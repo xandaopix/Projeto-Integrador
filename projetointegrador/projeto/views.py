@@ -86,7 +86,8 @@ def superuser(request):
     disciplina = Disciplina.objects.all()
     curso = Curso.objects.all()
     return render(request, 'superuser.html', {'disciplina': disciplina, 'curso': curso})
-        
+
+@permission_required('projeto.modificar_disciplinas', login_url=('login')) 
 def add_disc(request):
     professor = Professor.objects.all()
     if request.method == 'POST':
@@ -98,6 +99,7 @@ def add_disc(request):
             disciplina = DisciplinaDB()
     return render(request, 'add_disc.html', {'professor':professor})
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def add_curso(request):
     if request.method == 'POST':
         curso = CursoDB(request.POST)
@@ -107,6 +109,7 @@ def add_curso(request):
         else:
             curso = CursoDB()
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def add_aluno(request, id_disciplina):
     disciplina = get_object_or_404(Disciplina, id_disciplina=id_disciplina)
     aluno = Aluno.objects.all()
@@ -120,6 +123,7 @@ def add_aluno(request, id_disciplina):
         return redirect('/')
     return render(request, 'add_aluno.html', {'aluno': aluno, 'disciplina': disciplina})
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def excluir_aluno(request, id):
     alunofaz = get_object_or_404(AlunoFazDisciplina, id=id)
     if request.method == 'POST':
@@ -127,6 +131,7 @@ def excluir_aluno(request, id):
         return redirect('/')
     return render(request, 'confirmar_exclusao.html')
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def excluir_curso(request, id_curso):
     curso = get_object_or_404(Curso, id_curso=id_curso)
     if request.method == 'POST':
@@ -134,6 +139,7 @@ def excluir_curso(request, id_curso):
         return redirect('superuser')
     return render(request, 'confirmar_exclusao.html')
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def editar_curso(request, id_curso):
     curso = get_object_or_404(Curso, id_curso=id_curso)
     if request.method == 'POST':
@@ -145,6 +151,7 @@ def editar_curso(request, id_curso):
             curso = CursoDB()
     return render(request, 'editar_curso.html', {'curso': curso})
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def editar_disciplina(request, id_disciplina):
     disciplina = get_object_or_404(Disciplina, id_disciplina=id_disciplina)
     professor = Professor.objects.all()
@@ -157,6 +164,19 @@ def editar_disciplina(request, id_disciplina):
             disciplina = DisciplinaDB()
     return render(request, 'editar_disciplina.html', {'disciplina': disciplina, 'professor': professor})
 
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
+def editar_aluno(request, id_aluno):
+    aluno = get_object_or_404(Aluno, id_aluno=id_aluno)
+    if request.method == 'POST':
+        alunodb = AlunoDB(request.POST, instance=aluno)
+        if alunodb.is_valid():
+            alunodb.save()
+            return redirect('/')
+        else:
+            alunodb = AlunoDB()
+    return render(request, 'editar_aluno.html', {'aluno': aluno})
+
+@permission_required('projeto.modificar_disciplinas', login_url=('login'))
 def excluir_disc(request, id_disciplina):
     disciplina = get_object_or_404(Disciplina, id_disciplina=id_disciplina)
     if request.method == 'POST':
@@ -171,9 +191,5 @@ def base(request):
     
 def disciplina(request, id_disciplina):
     disciplina = get_object_or_404(Disciplina, id_disciplina=id_disciplina)
-    alunofazdisciplina = AlunoFazDisciplina.objects.all()
+    alunofazdisciplina = AlunoFazDisciplina.objects.filter(id_disciplina=id_disciplina)
     return render(request, 'disciplina.html', {'disciplina': disciplina, 'alunofazdisciplina': alunofazdisciplina})
-
-def editar(request):
-    return HttpResponse("Editar dados")
-

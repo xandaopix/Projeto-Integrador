@@ -14,7 +14,6 @@
                 <tr>
                     <th>Nome</th>
                     <th>Sobrenome</th>
-                    <th>Curso</th>
                     <th>Email</th>
                     <th>Ação</th>
                 </tr>
@@ -24,7 +23,6 @@
                 <tr>
                     <td>{{i.id_aluno.nome}}</td>
                     <td>{{i.id_aluno.sobrenome}}</td>
-                    <td>{{i.id_aluno.curso}}</td>
                     <td>{{i.id_aluno.email}}</td>
                     <td>
                         <div class="btn-group dropleft">
@@ -32,7 +30,7 @@
                             Ação
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="{% url 'editar_aluno' i.id_aluno.id_aluno %}">Editar</a>
                             <a class="dropdown-item" href="{% url 'excluir_aluno' i.id %}">Excluir</a>
                         </div>
                     </div>

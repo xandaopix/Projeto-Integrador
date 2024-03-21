@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block editar_aluno %}
+<div style="margin: 5px;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Editar Aluno</li>
+        </ol>
+    </nav>
+    <form method="post">{% csrf_token %}
+        <div class="form-group">
+            <label for="nome">Editar nome do aluno</label>
+            <input type="text" class="form-control" name="nome" id="nome" value="{{aluno.nome}}">
+            <input type="hidden" class="form-control" name="username" id="username" value="{{aluno.username}}">
+        </div>
+        <div class="form-group">
+            <label for="sobrenome">Editar sobrenome do aluno</label>
+            <input type="text" class="form-control" name="sobrenome" id="sobrenome" value="{{aluno.sobrenome}}">
+        </div>
+        <div class="form-group">
+            <label for="email'">Editar email do aluno</label>
+            <input type="email" class="form-control" name="email" id="email" value="{{aluno.email}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+{% endblock %}
