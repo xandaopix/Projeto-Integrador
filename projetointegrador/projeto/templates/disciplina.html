@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block disciplina %}
+<div style="margin: 5px;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{disciplina.nome}}</li>
+        </ol>
+    </nav>
+    <a type="button" class="btn btn-outline-primary btn-lg btn-block" style="margin-bottom: 5px;" href="{% url 'add_aluno' disciplina.id_disciplina %}">Adicionar aluno</a>
+    <div class="table-responsive">
+        <table class="table table-hover table-sm table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Curso</th>
+                    <th>Email</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in alunofazdisciplina %}
+                <tr>
+                    <td>{{i.id_aluno.nome}}</td>
+                    <td>{{i.id_aluno.sobrenome}}</td>
+                    <td>{{i.id_aluno.curso}}</td>
+                    <td>{{i.id_aluno.email}}</td>
+                    <td>
+                        <div class="btn-group dropleft">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ação
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="{% url 'excluir_aluno' i.id %}">Excluir</a>
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

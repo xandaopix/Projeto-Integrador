@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block add_disc %}
+<div style="margin: 5px;"></div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'disciplina' disciplina.id_disciplina %}">{{disciplina.nome}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Adicionar Aluno</li>
+        </ol>
+    </nav>
+</div>
+<div class="px-1 justify-content-center align-middle">
+    <div class="mx-auto px-1 py-1 border rounded">
+    <form method="post">{% csrf_token %}
+        <div class="form-group">
+            <input type="hidden" name="id_disciplina" value="{{disciplina.id_disciplina}}">
+            <label for="id_aluno" >Selecione o aluno que deseja adicionar à {{disciplina.nome}}:</label>
+            <select class="form-control" id="id_aluno" name="id_aluno">
+              {% for item in aluno %}
+              <option value={{item.id_aluno}}>{{item.nome}} {{item.sobrenome}}</option>
+              {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+</div>
+{% endblock %}

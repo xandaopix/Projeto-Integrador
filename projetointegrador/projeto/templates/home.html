@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block home %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb mt-1 mx-1">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+{% for i in disciplina %}
+<div style="margin: 5px;">
+    <div class="card">
+        <div class="card-header">
+          Nome do Curso
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{i.nome}}</h5>
+          <small class="card-text">{{i.id_professor.nome}} {{i.id_professor.sobrenome}}</small>
+          <p class="card-text">{{i.resumo}}</p>
+          <a href="{% url 'disciplina' i.id_disciplina %}" class="btn btn-primary">Acessar</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

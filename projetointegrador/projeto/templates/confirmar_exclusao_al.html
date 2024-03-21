@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block confirmar %}
+<div class="mx-2 my-2 justify-content-center align-middle">
+<div class="mx-auto border rounded">
+    <p class="h2">Confirmar exclusão</p>
+    <div class="d-flex btn-group justify-content-around">
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Sim</button>
+        </form>
+            <a href="{% url 'disciplina' disciplina.id_disciplina %}" class="btn btn-primary">Não</a>
+    </div>
+</div>
+</div>
+{% endblock %}
