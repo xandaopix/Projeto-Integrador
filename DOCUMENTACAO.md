@@ -19,4 +19,5 @@ Para o usuário cadastrar-se como Professor, é necessário um código 'especial
 
 ## Modelagem de banco de dados
 
+<img src="img/dbprojeto.png" width="500px">
 Coloque aqui a modelagem do banco de dados desenvolvido no projeto. Você pode colocar diagramas conceituais e lógicos, ou até mesmo descrever textualmente o que cada uma das tabelas e atributos representam. 
