@@ -23,4 +23,4 @@ O Projeto consiste em um site de gestão acadêmica. Ao fazer login, serão exib
 <!-- Coloque seu nome, uma foto sua e uma pequena bio sobre você na seguinte tabela: -->
 |  |  |
 |:-------------:|:------------------------------------------------------------:|
-|  <img src="img/profilepic.png" width="150px"></br> **Nome do Autor** | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
+|  <img src="img/profilepic.png" width="150px"></br> **Alexandre César** | Meu nome é Alexandre César, tenho 17 anos e estou cursando o último ano do curso técnico em Eletrotécnica no IFMT. |
