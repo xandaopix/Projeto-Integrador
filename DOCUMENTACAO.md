@@ -2,15 +2,15 @@
 
 Crie e ative um ambiente virtual em sua máquina:
  *  Abra o terminal e navegue até o diretório onde deseja criar seu 
-    projeto Django;
- *  Execute 'python -m venv myenv' para criar um 
-    ambiente virtual;
-   -  No Windows, execute 'myenv\Scripts\activate';
-   -  No macOS e Linux, execute 'source myenv/bin/activate';
+    projeto Django.
+ *  Execute 'py -m venv myenv' para criar um 
+    ambiente virtual.
+   -  No Windows, execute 'myenv\Scripts\activate'.
+   -  No macOS e Linux, execute 'source myenv/bin/activate'.
  *  Com o ambiente virtual ativado, instale o Django usando
-    'pip install django'
+    'pip install django'.
    
-Após feito a instalação do Django em seu ambiente birtual, cole a pasta "projetointegrador" na pasta raiz do ambiente virtual.
+Após a instalação do Django em seu ambiente virtual, cole a pasta "projetointegrador" na pasta raiz do ambiente virtual. Com o ambiente virtual ativado, navegue até a pasta utilizando o comando `cd projetointegrador` e, em seguida, utilize o comando `py manage.py runserver`. Abra seu navegador e acesse `http://127.0.0.1:8000`.
 
 ## Modelagem de banco de dados
 
