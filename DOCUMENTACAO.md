@@ -1,20 +1,16 @@
 # Documentação
 
-Aqui, você deve elaborar um "guia" para desenvolvedores que queiram contribuir livremente com seu projeto. Estruture este documento como achar melhor. Embora já hajam algumas seções pré-definidas, elas são apenas sugestões de qual estrutura seguir e o que escrever.
-
-**Não seja prolixo. Escreva de forma rápida, objetiva e sem informações óbvias.**
-* Crie e ative um ambiente virtual em sua máquina; 
-* instale o Django no ambiente virtual; 
-* cole a pasta "projetointegrador" na pasta raiz do ambiente virtual.
-
-## Instruções de deploy
-
-Faça uma pequena pesquisa sobre como fazer o [*deploy*](https://en.wikipedia.org/wiki/Software_deployment) de um projeto web com Python e Django e escreva aqui algumas orientações breves.  Fazer o *deploy* não é obrigatório para a avaliação, mas é importante que os desenvolvedores do projeto tenham ao menos uma noção de como isso é feito.
-
-Sugestões de serviços de hospedagem para pesquisar:
-* Vercell
-* PythonAnywhere
-* AWS Elastic Beanstalk (não recomendamos o uso deste serviço sem supervisão, pois pode gerar cobranças inesperadas)
+Crie e ative um ambiente virtual em sua máquina:
+ *  Abra o terminal e navegue até o diretório onde deseja criar seu 
+    projeto Django;
+ *  Execute 'python -m venv myenv' para criar um 
+    ambiente virtual;
+   -  No Windows, execute 'myenv\Scripts\activate';
+   -  No macOS e Linux, execute 'source myenv/bin/activate';
+ *  Com o ambiente virtual ativado, instale o Django usando
+    'pip install django'
+   
+Após feito a instalação do Django em seu ambiente birtual, cole a pasta "projetointegrador" na pasta raiz do ambiente virtual.
 
 ## Modelagem de banco de dados
 
