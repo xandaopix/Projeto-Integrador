@@ -3,6 +3,9 @@
 Aqui, você deve elaborar um "guia" para desenvolvedores que queiram contribuir livremente com seu projeto. Estruture este documento como achar melhor. Embora já hajam algumas seções pré-definidas, elas são apenas sugestões de qual estrutura seguir e o que escrever.
 
 **Não seja prolixo. Escreva de forma rápida, objetiva e sem informações óbvias.**
+* Crie e ative um ambiente virtual em sua máquina; 
+* instale o Django no ambiente virtual; 
+* cole a pasta "projetointegrador" na pasta raiz do ambiente virtual.
 
 ## Instruções de deploy
 
